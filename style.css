@@ -1,0 +1,310 @@
+body {
+    background-color: #002b36; /* Dark base color */
+    font-family: 'Arial', sans-serif;
+    padding: 70px 70px;
+    display: flex;
+    overflow: auto;/* Prevent scrollbars from appearing when sidebar is hidden */
+}
+
+/* Sidebar Styling */
+
+a {
+    color: rgb(67, 100, 138);
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: -190px; /* Hides most of the sidebar off-screen */
+    top: 9px;
+    width: 180px;
+    height: 95%;
+    background: rgba(0, 43, 54, 0.9);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.973);
+    transition: left 0.3s ease-in-out; /* Smooth slide effect */
+    border-radius: 30px;
+}
+
+/* Show sidebar when hovering over the sidebar */
+.sidebar:hover {
+    left: 0; /* Slide the sidebar into view */
+}
+
+
+.sidebar .menu-item {
+    padding: 8px 30px;
+    color: #b88917; /* Golden color */
+    font-size: 15px;
+    text-transform:capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sidebar .menu-item:hover {
+    color: #ffffff;
+    background: rgba(184, 137, 23, 0.1); /* Light hover effect */
+    box-shadow: inset 3px 0 0 #ffd700; /* Golden accent on the left */
+    border-radius: 10px;
+}
+
+.sidebar .menu-item.active{
+    background: linear-gradient(45deg, #b88917, #ffd700);
+    border-radius: 300px;
+    color: white;
+}
+
+/* Glowing button */
+.sidebar .glow-button {
+    padding: 10px 20px;
+    text-align: center;
+    background: #b88917;
+    color: #002b36;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #b88917, 0 0 40px #b88917, 0 0 80px #b88917;
+}
+
+.sidebar .glow-button:hover {
+    background: #ffd700;
+    color: #002b36;
+    box-shadow: 0 0 20px #ffd700, 0 0 60px #ffd700, 0 0 100px #ffd700;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 0; /* No margin-left to center the content */
+    padding: 80px; /* Adjust padding as needed */
+    width: 100%; /* Full width */
+    flex-grow: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+    .sidebar .menu-item {
+        justify-content: center;
+    }
+    .sidebar .menu-item span {
+        display: none;
+    }
+    .main-content {
+        margin-left: 30%; /* Adjust for smaller sidebar */
+    }
+}
+
+.dashboard-container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.welcome-box {
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.welcome-box h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    background-color: #17a2b8;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #138496;
+}
+
+.action-button:focus {
+    outline: none;
+}
+
+.table-section {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+/* Updated Bookings Page CSS */
+.main-content {
+    margin-left: 0; 
+    padding: 20px 20px;
+    width: 100%;
+    flex-grow: 1;
+    color: #fff; /* Ensure all text is readable on dark background */
+}
+
+/* Title Styling */
+.booking-title {
+    font-size: 2.5rem;
+    color: #b88917;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    margin-bottom: 40px;
+}
+
+
+/* Form Styling */
+.form-container, .custom-card {
+    background-color: rgba(0, 43, 54, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.form-title {
+    color: #ffd700;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.booking-form input, .booking-form select, .booking-form textarea {
+    background-color: #073642;
+    color: #fff;
+    border: 2px solid #b88917;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.booking-form input::placeholder, .booking-form textarea::placeholder {
+    color: #d4d4d4;
+}
+
+.booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+/* Glowing Button */
+.custom-btn {
+    background-color: #b88917;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+/* Links */
+.custom-link {
+    color: #b88917;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+/* List Group Styling */
+.available-rooms .list-group-item {
+    background-color: transparent;
+    color: #b88917;
+    border: none;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.available-rooms .list-group-item:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+
+.form-control {
+    width: 100%; /* Ensures the input fields take the full width of their parent */
+    max-width: 500px; /* Optional: Set a max width to control the size */
+    box-sizing: border-box; /* Ensures padding and borders are included in width */
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Centers columns */
+    gap: 20px; /* Optional: Adjust spacing between columns */
+}
+
+.available-rooms-column, .booking-form-column {
+    flex: 1; /* Allows columns to grow */
+    max-width: 500px; /* Limits width to ensure they don't stretch too much */
+    justify-content: center;
+}
+
+.card-img-top.img-fluid {
+    width: 100%; /* Ensures the image takes full width of the card */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 20px 20px 0 0;
+}
